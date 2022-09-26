@@ -1,7 +1,13 @@
 import type { NextPage } from 'next';
+import { Header } from '@/components/Header';
 
 const Home: NextPage = () => {
-  return <div className='bg-gray-100 p-6 font-bold text-red-500'>ここから始めるくーへんブログ</div>;
+  return (
+    <>
+      <Header />
+      <div className='p-6 font-bold text-red-500'>ここから始めるくーへんブログ</div>
+    </>
+  );
 };
 
 export default Home;
