@@ -1,5 +1,6 @@
 import { useTheme } from 'next-themes';
 import { FC, useEffect, useState } from 'react';
+import { MdOutlineLightMode, MdDarkMode } from 'react-icons/md';
 
 export const ChangeThemeButton: FC = () => {
   const { theme, setTheme } = useTheme();
@@ -8,13 +9,15 @@ export const ChangeThemeButton: FC = () => {
   useEffect(() => setMounted(true), []);
 
   return (
-    <button
-      aria-label='DarkModeToggleButton'
-      type='button'
-      className='mx-3'
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-    >
-      {mounted && <>{theme === 'dark' ? <span>ライト</span> : <span>ダーク</span>}</>}
-    </button>
+    <div className='mx-3'>
+      <button
+        aria-label='DarkModeToggleButton'
+        type='button'
+        className='text-3xl'
+        onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      >
+        {mounted && <>{theme === 'dark' ? <MdOutlineLightMode /> : <MdDarkMode />}</>}
+      </button>
+    </div>
   );
 };
