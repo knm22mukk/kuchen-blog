@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { FC, useState } from 'react';
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { headerNavLinks } from '@/data/headerNavLinks';
 
 export const MobileNav: FC = () => {
@@ -10,38 +11,12 @@ export const MobileNav: FC = () => {
   };
 
   return (
-    <div className='px-3 md:hidden'>
-      <button aria-label='ToggleMenu' type='button' onClick={handleClick}>
-        {open ? (
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            strokeWidth='1.5'
-            stroke='currentColor'
-            className='h-8 w-8'
-          >
-            <path strokeLinecap='round' strokeLinejoin='round' d='M6 18L18 6M6 6l12 12' />
-          </svg>
-        ) : (
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            strokeWidth='1.5'
-            stroke='currentColor'
-            className='h-8 w-8'
-          >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
-            />
-          </svg>
-        )}
+    <div className='mx-3 md:hidden'>
+      <button aria-label='ToggleMenu' type='button' onClick={handleClick} className='text-3xl'>
+        {open ? <AiOutlineClose /> : <AiOutlineMenu />}
       </button>
       <div
-        className={`fixed top-24 right-0 z-10 h-full w-full bg-gray-300 opacity-95 duration-300 ease-in-out ${
+        className={`fixed top-24 right-0 z-10 h-full w-full bg-gray-300 opacity-95 duration-300 ease-in-out dark:bg-gray-600 ${
           open ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
