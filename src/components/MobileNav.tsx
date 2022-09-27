@@ -10,7 +10,7 @@ export const MobileNav: FC = () => {
   };
 
   return (
-    <div className='px-3 md:hidden'>
+    <div className='mx-3 md:hidden'>
       <button aria-label='ToggleMenu' type='button' onClick={handleClick}>
         {open ? (
           <svg
@@ -41,7 +41,7 @@ export const MobileNav: FC = () => {
         )}
       </button>
       <div
-        className={`fixed top-24 right-0 z-10 h-full w-full bg-gray-300 opacity-95 duration-300 ease-in-out ${
+        className={`fixed top-24 right-0 z-10 h-full w-full bg-gray-300 opacity-95 duration-300 ease-in-out dark:bg-gray-600 ${
           open ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

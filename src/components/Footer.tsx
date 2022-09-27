@@ -10,13 +10,13 @@ export const Footer: FC = () => {
       <div className='py-5'>
         {headerNavLinks.map((link) => (
           <Link key={link.href} href={link.href}>
-            <a className='mx-4 border-b-2 border-transparent py-2 font-bold text-gray-700 transition duration-300 hover:border-indigo-600 hover:text-indigo-600 hover:opacity-80'>
+            <a className='mx-4 border-b-2 border-transparent py-2 font-bold text-gray-700 transition duration-300 hover:border-indigo-600 hover:text-indigo-600 hover:opacity-80 dark:text-white'>
               {link.title}
             </a>
           </Link>
         ))}
       </div>
-      <p className='mt-5 text-center text-sm font-medium tracking-wide text-gray-600'>
+      <p className='mt-5 text-center text-sm font-medium tracking-wide text-gray-600 dark:text-white'>
         &copy; Copyright 2022,Kuchen Blog. All Rights Reserved.
       </p>
     </footer>
