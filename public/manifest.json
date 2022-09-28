@@ -4,9 +4,9 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "クーヘンブログ",
+  "name": "くーへんブログ",
   "short_name": "Kuchen Blog",
-  "description": "クーヘンが運営する雑記個人ブログ",
+  "description": "くーへんが運営する雑記個人ブログ",
   "icons": [
     {
       "src": "/icons/icon-192x192.png",

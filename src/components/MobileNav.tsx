@@ -6,7 +6,7 @@ import { headerNavLinks } from '@/data/headerNavLinks';
 export const MobileNav: FC = () => {
   const [open, setOpen] = useState<boolean>(false);
 
-  const handleClick = () => {
+  const handleClick = (): void => {
     setOpen(!open);
   };
 
