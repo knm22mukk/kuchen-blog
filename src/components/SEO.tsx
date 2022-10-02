@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { FC } from 'react';
+import { siteMetaData } from '@/data/siteMetaData';
 
 type Props = {
   pageTitle?: string;
@@ -18,12 +19,10 @@ export const SEO: FC<Props> = ({
   pageImageWidth,
   pageImageHeight,
 }) => {
-  const title = pageTitle ? pageTitle : 'くーへんブログ';
-  const description = pageDescription
-    ? pageDescription
-    : 'くーへんが仕事や日常に関することを気ままに発信する個人ブログです。';
-  const url = pagePath ? pagePath : 'https://kuchen-blog.vercel.app/';
-  const imgUrl = pageImage ? pageImage : '/images/logo500x180.png';
+  const title = pageTitle ? pageTitle : siteMetaData.title;
+  const description = pageDescription ? pageDescription : siteMetaData.description;
+  const url = pagePath ? pagePath : siteMetaData.siteUrl;
+  const imgUrl = pageImage ? pageImage : siteMetaData.siteLogo;
   const imgWidth = pageImageWidth ? pageImageWidth : 1280;
   const imgHeight = pageImageHeight ? pageImageHeight : 640;
   return (
@@ -44,7 +43,7 @@ export const SEO: FC<Props> = ({
       <meta property='og:image:height' content={String(imgHeight)} />
 
       <meta name='twitter:card' content='summary_large_image' />
-      <meta name='twitter:site' content='@kuchen_22' />
+      <meta name='twitter:site' content={`@${siteMetaData.twitter}`} />
       <meta name='twitter:pageTitle' content={title} />
       <meta name='twitter:description' content={description} />
       <meta name='twitter:image' content={imgUrl} />
