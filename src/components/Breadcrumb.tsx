@@ -13,14 +13,14 @@ export const Breadcrumb: FC<Props> = ({ lists }) => {
   return (
     <div className='container mx-auto py-2'>
       <ol aria-label='breadcrumb' className='flex items-center font-bold'>
-        <li>
+        <li className='flex items-center'>
           <Link href='/'>
             <a className='text-sm underline hover:text-indigo-600 md:text-base'>ホーム</a>
           </Link>
         </li>
         <FaChevronRight aria-hidden='true' className='mx-2 text-xs' />
         {lists.map(({ title, path = '/' }, index) => (
-          <li key={index}>
+          <li key={index} className='flex items-center'>
             {lists.length - 1 !== index ? (
               <>
                 <Link href={path}>
