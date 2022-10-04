@@ -8,13 +8,13 @@ import { client } from '@/libs/client';
 import { Blog, Category } from '@/types/blog';
 
 export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: 'blogs' });
-  const category = await client.get({ endpoint: 'categories' });
+  const blogData = await client.get({ endpoint: 'blogs' });
+  const categoryData = await client.get({ endpoint: 'categories' });
 
   return {
     props: {
-      blogs: data.contents,
-      categories: category.contents,
+      blogs: blogData.contents,
+      categories: categoryData.contents,
     },
   };
 };
@@ -33,13 +33,25 @@ const Blog: NextPage<Props> = ({ blogs, categories }) => {
         pagePath={`${siteMetaData.siteUrl}/about`}
       />
       <Breadcrumb lists={[{ title: 'BLOG' }]} />
-      {blogs.map((blog) => (
-        <li key={blog.id}>
-          <Link href={`/blog/${blog.id}`}>
-            <a>{blog.title}</a>
-          </Link>
-        </li>
-      ))}
+      <ul>
+        {blogs.map((blog) => (
+          <li key={blog.id}>
+            <Link href={`/blog/${blog.id}`}>
+              <a>{blog.title}</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+      <br />
+      <ul>
+        {categories.map((category) => (
+          <li key={category.id}>
+            <Link href={`/blog/category/${category.id}`}>
+              <a>{category.name}</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </Layout>
   );
 };
