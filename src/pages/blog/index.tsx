@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
+import { BlogCard } from '@/components/BlogCard';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { Layout } from '@/components/Layout';
 import { SEO } from '@/components/SEO';
@@ -33,15 +34,20 @@ const Blog: NextPage<Props> = ({ blogs, categories }) => {
         pagePath={`${siteMetaData.siteUrl}/about`}
       />
       <Breadcrumb lists={[{ title: 'BLOG' }]} />
-      <ul>
-        {blogs.map((blog) => (
-          <li key={blog.id}>
-            <Link href={`/blog/${blog.id}`}>
-              <a>{blog.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <div className='container mx-auto'>
+        <div className='grid gap-4 py-16 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
+          {blogs.map((blog) => (
+            <BlogCard
+              key={blog.id}
+              path={`/blog/${blog.id}`}
+              title={blog.title}
+              description={blog.description}
+              imageSrc={blog.image.url}
+              date={blog.publishedAt}
+            />
+          ))}
+        </div>
+      </div>
       <br />
       <ul>
         {categories.map((category) => (
