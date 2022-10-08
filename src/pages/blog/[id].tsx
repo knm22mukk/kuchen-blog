@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { Article } from '@/components/Article';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { Layout } from '@/components/Layout';
 import { SEO } from '@/components/SEO';
@@ -18,7 +19,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const id: string = String(context.params?.id);
+  const id = context.params?.id as string;
   const data = await client.get({ endpoint: 'blogs', contentId: id });
   return {
     props: {
@@ -35,14 +36,8 @@ const blogId: NextPage<Props> = ({ blog }) => {
         pageDescription='サラリーマンくーへんが仕事のこと、日常のことを気ままに発信していきます。'
         pagePath={`${siteMetaData.siteUrl}/about`}
       />
-      <Breadcrumb lists={[{ title: 'BLOG', path: '/blog' }, { title: blog.id }]} />
-      <h1>{blog.title}</h1>
-      <p>{blog.publishedAt}</p>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${blog.body}`,
-        }}
-      />
+      <Breadcrumb lists={[{ title: 'BLOG', path: '/blog' }, { title: blog.title }]} />
+      <Article blog={blog} />
     </Layout>
   );
 };

@@ -34,17 +34,10 @@ const Blog: NextPage<Props> = ({ blogs, categories }) => {
         pagePath={`${siteMetaData.siteUrl}/about`}
       />
       <Breadcrumb lists={[{ title: 'BLOG' }]} />
-      <div className='container mx-auto'>
-        <div className='grid gap-4 py-16 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
+      <div className='container mx-auto py-16'>
+        <div className='grid gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4'>
           {blogs.map((blog) => (
-            <BlogCard
-              key={blog.id}
-              path={`/blog/${blog.id}`}
-              title={blog.title}
-              description={blog.description}
-              imageSrc={blog.image.url}
-              date={blog.publishedAt}
-            />
+            <BlogCard key={blog.id} blog={blog} />
           ))}
         </div>
       </div>

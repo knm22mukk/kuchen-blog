@@ -6,7 +6,7 @@ export type Blog = {
   };
   description: string;
   body: string;
-  category: Category[];
+  category: Category;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
