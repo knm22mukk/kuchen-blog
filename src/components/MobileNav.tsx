@@ -16,7 +16,7 @@ export const MobileNav: FC = () => {
         {open ? <AiOutlineClose /> : <AiOutlineMenu />}
       </button>
       <div
-        className={`fixed top-24 right-0 z-10 h-full w-full bg-gray-300 opacity-95 duration-300 ease-in-out dark:bg-gray-600 ${
+        className={`fixed top-24 right-0 z-20 h-full w-full bg-gray-300 opacity-95 duration-300 ease-in-out dark:bg-gray-600 ${
           open ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

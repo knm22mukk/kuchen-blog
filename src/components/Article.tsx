@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { FC } from 'react';
+import { AiOutlineClockCircle } from 'react-icons/ai';
 import { Date } from './Date';
+import styles from '@/styles/article.module.css';
 import { Blog } from '@/types/blog';
 
 type Props = {
@@ -16,8 +18,9 @@ export const Article: FC<Props> = ({ blog }) => {
         </div>
       </div>
       <h1 className='text-4xl font-extrabold'>{blog.title}</h1>
-      <div className='flex items-center justify-end'>
-        <div className='ml-2 text-2xl font-semibold leading-8 text-gray-600 dark:text-white'>
+      <div className='flex items-center justify-end text-gray-600 dark:text-white'>
+        <AiOutlineClockCircle className='h-6 w-6' aria-hidden='true' />
+        <div className='ml-2 text-2xl font-semibold leading-8'>
           <Date dateString={blog.publishedAt} />
         </div>
       </div>
@@ -28,7 +31,7 @@ export const Article: FC<Props> = ({ blog }) => {
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
         }}
-        className='prose max-w-none dark:prose-invert'
+        className={`prose max-w-none dark:prose-invert ${styles.article_style}`}
       />
     </article>
   );
