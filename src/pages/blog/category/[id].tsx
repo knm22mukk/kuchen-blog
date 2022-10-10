@@ -1,5 +1,4 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import Link from 'next/link';
 import { BlogCard } from '@/components/BlogCard';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { Layout } from '@/components/Layout';
@@ -49,7 +48,7 @@ const categoryID: NextPage<Props> = ({ blogs, categoryName }) => {
       <Breadcrumb lists={[{ title: 'BLOG', path: '/blog' }, { title: categoryName }]} />
       <h2>カテゴリー：{categoryName}の記事一覧</h2>
       <div className='container mx-auto'>
-        <div className='grid gap-4 py-16 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
+        <div className='grid gap-4 py-16 sm:grid-cols-2'>
           {blogs.map((blog) => (
             <BlogCard key={blog.id} blog={blog} />
           ))}

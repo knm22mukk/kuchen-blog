@@ -35,7 +35,7 @@ const Blog: NextPage<Props> = ({ blogs, categories }) => {
       />
       <Breadcrumb lists={[{ title: 'BLOG' }]} />
       <div className='container mx-auto py-16'>
-        <div className='grid gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4'>
+        <div className='grid gap-6 sm:grid-cols-2'>
           {blogs.map((blog) => (
             <BlogCard key={blog.id} blog={blog} />
           ))}
