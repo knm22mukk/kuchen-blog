@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import { Breadcrumb } from '@/components/Breadcrumb';
+import { ContactForm } from '@/components/ContactForm';
 import { Layout } from '@/components/Layout';
 import { SEO } from '@/components/SEO';
 import { siteMetaData } from '@/data/siteMetaData';
@@ -13,6 +14,7 @@ const contact: NextPage = () => {
         pagePath={`${siteMetaData.siteUrl}/contact`}
       />
       <Breadcrumb lists={[{ title: 'CONTACT' }]} />
+      <ContactForm />
     </Layout>
   );
 };

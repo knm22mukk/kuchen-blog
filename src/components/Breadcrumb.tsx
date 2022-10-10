@@ -15,7 +15,7 @@ export const Breadcrumb: FC<Props> = ({ lists }) => {
       <ol aria-label='breadcrumb' className='flex items-center font-bold'>
         <li className='flex items-center'>
           <Link href='/'>
-            <a className='text-sm underline hover:text-indigo-600 md:text-base'>ホーム</a>
+            <a className='text-sm underline hover:text-indigo-600 md:text-base'>HOME</a>
           </Link>
         </li>
         <FaChevronRight aria-hidden='true' className='mx-2 text-xs' />

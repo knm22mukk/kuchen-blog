@@ -1,7 +1,9 @@
 import { NextPage } from 'next';
+import { Article } from '@/components/Article';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { Layout } from '@/components/Layout';
 import { SEO } from '@/components/SEO';
+import { profileData } from '@/data/profileData';
 import { siteMetaData } from '@/data/siteMetaData';
 
 const about: NextPage = () => {
@@ -13,6 +15,7 @@ const about: NextPage = () => {
         pagePath={`${siteMetaData.siteUrl}/about`}
       />
       <Breadcrumb lists={[{ title: 'ABOUT' }]} />
+      <Article blog={profileData} />
     </Layout>
   );
 };
