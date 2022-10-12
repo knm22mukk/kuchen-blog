@@ -1,13 +1,14 @@
-import { NextPage } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import { BlogCard } from '@/components/BlogCard';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { Layout } from '@/components/Layout';
 import { SEO } from '@/components/SEO';
+import { SectionHeader } from '@/components/SectionHeader';
 import { siteMetaData } from '@/data/siteMetaData';
 import { client } from '@/libs/client';
 import { Blog } from '@/types/blog';
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const blogData = await client.get({ endpoint: 'blogs', queries: { limit: 12 } });
 
   return {
@@ -30,7 +31,8 @@ const Blog: NextPage<Props> = ({ blogs }) => {
         pagePath={`${siteMetaData.siteUrl}/about`}
       />
       <Breadcrumb lists={[{ title: 'BLOG' }]} />
-      <div className='container mx-auto py-16'>
+      <SectionHeader subHeading='BLOG' title='ブログ記事一覧' />
+      <div className='container mx-auto py-8'>
         <div className='grid gap-6 sm:grid-cols-2'>
           {blogs.map((blog) => (
             <BlogCard key={blog.id} blog={blog} />

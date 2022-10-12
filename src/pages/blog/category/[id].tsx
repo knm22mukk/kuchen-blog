@@ -3,6 +3,7 @@ import { BlogCard } from '@/components/BlogCard';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { Layout } from '@/components/Layout';
 import { SEO } from '@/components/SEO';
+import { SectionHeader } from '@/components/SectionHeader';
 import { siteMetaData } from '@/data/siteMetaData';
 import { client } from '@/libs/client';
 import { Blog } from '@/types/blog';
@@ -24,7 +25,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const id: string = String(context.params?.id);
   const blogData = await client.get({
     endpoint: 'blogs',
-    queries: { filters: `category[equals]${id}` },
+    queries: { filters: `category[equals]${id}`, limit: 12 },
   });
   return {
     props: {
@@ -46,9 +47,9 @@ const categoryID: NextPage<Props> = ({ blogs, categoryName }) => {
         pagePath={`${siteMetaData.siteUrl}/blog/category/${categoryName}`}
       />
       <Breadcrumb lists={[{ title: 'BLOG', path: '/blog' }, { title: categoryName }]} />
-      <h2>カテゴリー：{categoryName}の記事一覧</h2>
+      <SectionHeader subHeading='BLOG' title={`${categoryName}の記事一覧`} />
       <div className='container mx-auto'>
-        <div className='grid gap-4 py-16 sm:grid-cols-2'>
+        <div className='grid gap-4 py-8 sm:grid-cols-2'>
           {blogs.map((blog) => (
             <BlogCard key={blog.id} blog={blog} />
           ))}

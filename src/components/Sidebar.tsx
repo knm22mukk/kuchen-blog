@@ -19,7 +19,7 @@ const categories = [
 
 export const Sidebar: FC = () => {
   return (
-    <section className='mt-10'>
+    <aside className='mt-10'>
       <div className='bg-indigo-600 p-4 text-2xl font-semibold leading-8 text-white'>
         カテゴリー
       </div>
@@ -39,6 +39,6 @@ export const Sidebar: FC = () => {
           ))}
         </ul>
       </div>
-    </section>
+    </aside>
   );
 };

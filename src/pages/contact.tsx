@@ -3,6 +3,7 @@ import { Breadcrumb } from '@/components/Breadcrumb';
 import { ContactForm } from '@/components/ContactForm';
 import { Layout } from '@/components/Layout';
 import { SEO } from '@/components/SEO';
+import { SectionHeader } from '@/components/SectionHeader';
 import { siteMetaData } from '@/data/siteMetaData';
 
 const contact: NextPage = () => {
@@ -14,6 +15,7 @@ const contact: NextPage = () => {
         pagePath={`${siteMetaData.siteUrl}/contact`}
       />
       <Breadcrumb lists={[{ title: 'CONTACT' }]} />
+      <SectionHeader subHeading='CONTACT' title='お問い合わせ' />
       <ContactForm />
     </Layout>
   );

@@ -1,10 +1,12 @@
 import { NextPage } from 'next';
-import { Article } from '@/components/Article';
+import Image from 'next/image';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { Layout } from '@/components/Layout';
 import { SEO } from '@/components/SEO';
+import { SectionHeader } from '@/components/SectionHeader';
 import { profileData } from '@/data/profileData';
 import { siteMetaData } from '@/data/siteMetaData';
+import styles from '@/styles/article.module.css';
 
 const about: NextPage = () => {
   return (
@@ -15,7 +17,23 @@ const about: NextPage = () => {
         pagePath={`${siteMetaData.siteUrl}/about`}
       />
       <Breadcrumb lists={[{ title: 'ABOUT' }]} />
-      <Article blog={profileData} />
+      <SectionHeader subHeading='ABOUT' title='くーへんの自己紹介' />
+      <div className='container'>
+        <div className='my-4'>
+          <Image
+            width={500}
+            height={500}
+            src={profileData.image.url}
+            alt='くーへんプロフィール画像'
+          />
+        </div>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `${profileData.body}`,
+          }}
+          className={`prose max-w-none dark:prose-invert ${styles.article_style}`}
+        />
+      </div>
     </Layout>
   );
 };

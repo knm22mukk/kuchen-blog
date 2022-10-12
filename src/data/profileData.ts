@@ -4,7 +4,7 @@ export const profileData: Blog = {
   id: 'profile',
   title: 'プロフィール',
   image: {
-    url: '/images/logo500x180.png',
+    url: '/images/Klogo500x500.png',
   },
   description:
     'くーへんの自己紹介をさせていただきます。なぜ、ブログを書き始めたのか。なぜプログラミングを始めたのか経緯を書いています。',
