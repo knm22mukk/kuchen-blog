@@ -16,7 +16,12 @@ export const Footer: FC = () => {
           </Link>
         ))}
       </div>
-      <p className='mt-5 text-center text-sm font-medium tracking-wide text-gray-600 dark:text-white'>
+      <Link href='/privacypolicy'>
+        <a className='border-b-2 border-transparent text-sm font-semibold transition duration-300 hover:border-indigo-600 hover:text-indigo-600'>
+          PRIVACY POLICY
+        </a>
+      </Link>
+      <p className='mt-5 text-center text-sm font-medium tracking-wide text-gray-500 dark:text-white'>
         &copy; Copyright 2022,Kuchen Blog. All Rights Reserved.
       </p>
     </footer>

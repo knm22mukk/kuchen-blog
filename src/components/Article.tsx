@@ -18,7 +18,7 @@ export const Article: FC<Props> = ({ blog }) => {
         </div>
       </div>
       <h1 className='text-4xl font-extrabold'>{blog.title}</h1>
-      <div className='flex items-center justify-end text-gray-600 dark:text-white'>
+      <div className='flex items-center justify-end text-gray-500 dark:text-white'>
         <AiOutlineClockCircle className='h-6 w-6' aria-hidden='true' />
         <div className='ml-2 text-2xl font-semibold leading-8'>
           <Date dateString={blog.publishedAt} />

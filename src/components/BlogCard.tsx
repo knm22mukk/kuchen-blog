@@ -31,7 +31,7 @@ export const BlogCard: FC<Props> = ({ blog }) => {
           </div>
           <div className='flex min-h-[160px] flex-col justify-between p-4'>
             <h2 className='text-2xl font-bold leading-8'>{blog.title}</h2>
-            <div className='text-right text-lg font-medium leading-6 text-gray-600 dark:text-white'>
+            <div className='text-right text-lg font-medium leading-6 text-gray-500 dark:text-white'>
               <Date dateString={blog.publishedAt} />
             </div>
           </div>
