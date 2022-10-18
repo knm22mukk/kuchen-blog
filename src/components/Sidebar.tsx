@@ -39,19 +39,23 @@ export const Sidebar: FC = () => {
           </Link>
         </div>
         <div className='flex flex-col items-center justify-center p-4'>
-          <div className='text-xl font-bold leading-7'>くーへん</div>
+          <div className='text-xl font-bold leading-7'>
+            くーへん(
+            <a href='https://twitter.com/kuchen_22' className='text-blue-500 hover:text-blue-700'>
+              @kuhen_22
+            </a>
+            )
+          </div>
         </div>
         <div className='text-base font-normal leading-6'>
-          <p>text text text text text text text text text text text text text text text</p>
+          <p>サラリーマン営業/31歳/嫁と娘の3人暮らし</p>
           <br />
           <p>
-            text text text text texttext text text text texttext text text text texttext text text
-            text texttext text text text text
+            プログラミング学習のアウトプットとして、また日々感じたことやプログラミングに関することをゆるく発信します。
           </p>
           <br />
           <p>
-            text text text text texttext text text text texttext text text text texttext text text
-            text text
+            ブログ運営や記事に関するご質問があればTwitterのDMかお問合せページからご連絡をいただけますと幸いです。
           </p>
         </div>
       </div>
