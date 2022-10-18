@@ -64,7 +64,7 @@ export const Sidebar: FC = () => {
           {categories.map((category) => (
             <Link key={category.id} href={`/blog/category/${category.id}`}>
               <a>
-                <li className='flex items-center border-b py-3 hover:bg-indigo-50 dark:hover:text-gray-500'>
+                <li className='flex items-center border-b py-5 hover:bg-indigo-50 dark:hover:text-gray-600'>
                   <div className='flex grow items-center'>
                     <AiOutlineRight className='h-5 w-5' aria-hidden='true' />
                     <div className='ml-4 text-lg font-semibold leading-6 '>{category.name}</div>

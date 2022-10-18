@@ -15,7 +15,7 @@ const privacypolicy: NextPage = () => {
         pageDescription='くーへんブログのプライバシーポリシーを記載しています。'
         pagePath={`${siteMetaData.siteUrl}/privacypolicy`}
       />
-      <Breadcrumb lists={[{ title: 'PRIVACY POLICY ' }]} />
+      <Breadcrumb lists={[{ title: 'プライバシーポリシー' }]} />
       <SectionHeader subHeading='PRIVACY POLICY' title='プライバシーポリシー' />
       <div className='container'>
         <div

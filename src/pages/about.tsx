@@ -16,15 +16,16 @@ const about: NextPage = () => {
         pageDescription='簡単に管理人くーへんの自己紹介をさせていただきます。よければTwitterのフォローもお願いします。'
         pagePath={`${siteMetaData.siteUrl}/about`}
       />
-      <Breadcrumb lists={[{ title: 'ABOUT' }]} />
+      <Breadcrumb lists={[{ title: '自己紹介' }]} />
       <SectionHeader subHeading='ABOUT' title='くーへんの自己紹介' />
       <div className='container'>
-        <div className='my-4'>
+        <div className='my-4 flex justify-center'>
           <Image
-            width={500}
-            height={500}
+            width={400}
+            height={400}
             src={profileData.image.url}
             alt='くーへんプロフィール画像'
+            className='rounded-full'
           />
         </div>
         <div

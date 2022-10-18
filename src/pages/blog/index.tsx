@@ -30,7 +30,7 @@ const Blog: NextPage<Props> = ({ blogs }) => {
         pageDescription='サラリーマンくーへんが仕事のこと、日常のことを気ままに発信していきます。'
         pagePath={`${siteMetaData.siteUrl}/about`}
       />
-      <Breadcrumb lists={[{ title: 'BLOG' }]} />
+      <Breadcrumb lists={[{ title: 'ブログ' }]} />
       <SectionHeader subHeading='BLOG' title='ブログ記事一覧' />
       <div className='container mx-auto py-8'>
         <div className='grid gap-6 sm:grid-cols-2'>

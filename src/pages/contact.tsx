@@ -14,7 +14,7 @@ const contact: NextPage = () => {
         pageDescription='ブログ記事の内容、運営に関するご質問等がありましたらお気軽にフォームからご連絡ください。'
         pagePath={`${siteMetaData.siteUrl}/contact`}
       />
-      <Breadcrumb lists={[{ title: 'CONTACT' }]} />
+      <Breadcrumb lists={[{ title: 'お問い合わせ' }]} />
       <SectionHeader subHeading='CONTACT' title='お問い合わせ' />
       <ContactForm />
     </Layout>

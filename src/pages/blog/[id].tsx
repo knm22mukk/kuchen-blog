@@ -36,7 +36,7 @@ const blogId: NextPage<Props> = ({ blog }) => {
         pageDescription='サラリーマンくーへんが仕事のこと、日常のことを気ままに発信していきます。'
         pagePath={`${siteMetaData.siteUrl}/about`}
       />
-      <Breadcrumb lists={[{ title: 'BLOG', path: '/blog' }, { title: blog.title }]} />
+      <Breadcrumb lists={[{ title: 'ブログ', path: '/blog' }, { title: blog.title }]} />
       <Article blog={blog} />
     </Layout>
   );
