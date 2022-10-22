@@ -2,7 +2,6 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { BaseButton } from '@/components/Button';
 import { SectionHeader } from '@/components/SectionHeader';
 
 const custom404: NextPage = () => {
@@ -22,9 +21,7 @@ const custom404: NextPage = () => {
           The page youre looking for doesnt exist.
         </p>
         <Link href='/'>
-          <a>
-            <BaseButton typename='button'>ホームに戻る</BaseButton>
-          </a>
+          <a className='baseButton'>ホームに戻る</a>
         </Link>
       </div>
     </>
