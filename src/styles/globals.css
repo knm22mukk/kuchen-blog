@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.baseButton {
+  @apply rounded bg-blue-500 py-4 px-14 text-xl font-bold text-white hover:bg-indigo-700;
+}

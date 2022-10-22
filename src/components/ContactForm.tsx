@@ -1,7 +1,38 @@
-import { FC } from 'react';
-import { BaseButton } from './Button';
+import { useRouter } from 'next/router';
+import React, { FC, useState } from 'react';
 
 export const ContactForm: FC = () => {
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
+
+  const router = useRouter();
+
+  const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
+    e.preventDefault();
+
+    fetch('/api/sendMail', {
+      method: 'POST',
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        message: message,
+      }),
+    })
+      .then((res) => {
+        console.log(`名前; ${name}, メールアドレス: ${email}, message: ${message}`);
+        if (res.status === 200) {
+          console.log('Response succeeded!');
+          router.push('/');
+        } else {
+          alert(`Error: Status Code ${res.status}`);
+        }
+      })
+      .catch((e) => {
+        alert(`Error: ${e}`);
+      });
+  };
+
   return (
     <form className='container'>
       <div className='my-10'>
@@ -10,6 +41,9 @@ export const ContactForm: FC = () => {
         </label>
         <input
           type='text'
+          name='name'
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           className='w-full rounded border border-gray-300 bg-gray-100 p-2 text-base outline-none focus:border-indigo-500 focus:bg-white dark:bg-gray-600'
         />
       </div>
@@ -19,6 +53,9 @@ export const ContactForm: FC = () => {
         </label>
         <input
           type='text'
+          name='email'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           className='w-full rounded border border-gray-300 bg-gray-100 p-2 text-base outline-none focus:border-indigo-500 focus:bg-white dark:bg-gray-600'
         />
       </div>
@@ -28,11 +65,18 @@ export const ContactForm: FC = () => {
         </label>
         <textarea
           rows={5}
+          name='message'
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
           className='w-full rounded border border-gray-300 bg-gray-100 p-2 text-base outline-none focus:border-indigo-500 focus:bg-white dark:bg-gray-600'
         ></textarea>
       </div>
       <div className='flex justify-center'>
-        <BaseButton typename='submit'>送信</BaseButton>
+        <input
+          type='submit'
+          onClick={async (e) => await handleSubmit(e)}
+          className='baseButton cursor-pointer'
+        />
       </div>
     </form>
   );
