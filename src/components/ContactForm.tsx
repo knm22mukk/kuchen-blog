@@ -20,16 +20,14 @@ export const ContactForm: FC = () => {
       }),
     })
       .then((res) => {
-        console.log(`名前; ${name}, メールアドレス: ${email}, message: ${message}`);
         if (res.status === 200) {
-          console.log('Response succeeded!');
-          router.push('/');
+          router.push('/contact/success');
         } else {
-          alert(`Error: Status Code ${res.status}`);
+          alert(`送信できませんでした。Error: Status Code ${res.status}`);
         }
       })
       .catch((e) => {
-        alert(`Error: ${e}`);
+        alert(`送信できませんでした。Error: ${e}`);
       });
   };
 
