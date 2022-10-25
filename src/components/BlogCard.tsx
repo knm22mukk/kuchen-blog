@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 import { Date } from './Date';
-import { Blog, Category } from '@/types/blog';
+import { Blog } from '@/types/blog';
 
 type Props = {
   blog: Blog;

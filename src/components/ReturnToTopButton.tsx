@@ -5,7 +5,7 @@ export const ReturnToTopButton: FC = () => {
   const [show, setShow] = useState<boolean>(false);
 
   const changeShow = () => {
-    const page_y_offset: number = 100;
+    const page_y_offset = 100;
     if (window.pageYOffset > page_y_offset) {
       setShow(true);
     } else {

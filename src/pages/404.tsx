@@ -2,7 +2,6 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { SectionHeader } from '@/components/SectionHeader';
 
 const custom404: NextPage = () => {
   return (

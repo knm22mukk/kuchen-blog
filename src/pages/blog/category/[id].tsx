@@ -22,7 +22,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const id: string = String(context.params?.id);
+  const id = String(context.params?.id);
   const blogData = await client.get({
     endpoint: 'blogs',
     queries: { filters: `category[equals]${id}`, limit: 12 },
