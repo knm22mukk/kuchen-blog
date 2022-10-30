@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
-import { AiOutlineCheck } from 'react-icons/ai';
+import { AiOutlineCheck, AiOutlineArrowRight } from 'react-icons/ai';
 import { BlogCard } from './BlogCard';
 import { SectionHeader } from '@/components/SectionHeader';
 import { featureTexts } from '@/data/featureTexts';
@@ -37,7 +37,8 @@ export const Hero: FC<Props> = ({ blogs }) => {
                 <h3 className='mb-3 text-xl font-bold leading-5'>{text.title}</h3>
                 <p className='mb-3 text-sm'>{text.paragragh}</p>
                 <Link href={text.href}>
-                  <a className='mx-3 border-b-2 border-transparent font-bold text-indigo-500 duration-300 hover:border-indigo-600 hover:text-indigo-600'>
+                  <a className='textLink inline-flex items-center text-indigo-500'>
+                    <AiOutlineArrowRight className='mr-3' />
                     記事を見てみる
                   </a>
                 </Link>

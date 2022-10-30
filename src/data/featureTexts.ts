@@ -7,7 +7,7 @@ export const featureTexts: { title: string; paragragh: string; href: string }[] 
   {
     title: 'グルメ・旅行',
     href: '/blog/category/food',
-    paragragh: 'おすすめのグルメや旅行の情報などを発信します。',
+    paragragh: 'おすすめのグルメや旅行の情報などを発信します。良ければご覧ください！',
   },
   {
     title: 'プログラミング',

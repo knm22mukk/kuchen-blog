@@ -17,9 +17,7 @@ export const Header: FC = () => {
         <div className='hidden md:block'>
           {headerNavLinks.map((link) => (
             <Link key={link.title} href={link.href}>
-              <a className='mx-3 border-b-2 border-transparent font-bold duration-300 hover:border-indigo-600 hover:text-indigo-600'>
-                {link.title}
-              </a>
+              <a className='textLink'>{link.title}</a>
             </Link>
           ))}
         </div>
