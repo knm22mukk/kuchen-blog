@@ -1,5 +1,5 @@
 import { GetStaticProps, NextPage } from 'next';
-import { BlogCard } from '@/components/BlogCard';
+import { BlogGrid } from '@/components/BlogGrid';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { Layout } from '@/components/Layout';
 import { SEO } from '@/components/SEO';
@@ -33,13 +33,7 @@ const Blog: NextPage<Props> = ({ blogs }) => {
       />
       <Breadcrumb lists={[{ title: 'ブログ' }]} />
       <SectionHeader subHeading='BLOG' title='ブログ記事一覧' />
-      <div className='container mx-auto py-8'>
-        <div className='grid gap-6 sm:grid-cols-2'>
-          {blogs.map((blog) => (
-            <BlogCard key={blog.id} blog={blog} />
-          ))}
-        </div>
-      </div>
+      <BlogGrid blogs={blogs} />
       <ToContact />
     </Layout>
   );

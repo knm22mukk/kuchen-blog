@@ -2,16 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 import { AiOutlineCheck, AiOutlineArrowRight } from 'react-icons/ai';
-import { BlogCard } from './BlogCard';
 import { SectionHeader } from '@/components/SectionHeader';
 import { featureTexts } from '@/data/featureTexts';
-import { Blog } from '@/types/blog';
 
-type Props = {
-  blogs: Blog[];
-};
-
-export const Hero: FC<Props> = ({ blogs }) => {
+export const Hero: FC = () => {
   return (
     <section>
       <div className=''>
@@ -45,21 +39,6 @@ export const Hero: FC<Props> = ({ blogs }) => {
               </div>
             </div>
           ))}
-        </div>
-      </div>
-      <div className='py-8'>
-        <SectionHeader subHeading='LATEST' title='最新記事' />
-        <div className='container mx-auto py-8'>
-          <div className='grid gap-6 sm:grid-cols-2'>
-            {blogs.map((blog) => (
-              <BlogCard key={blog.id} blog={blog} />
-            ))}
-          </div>
-        </div>
-        <div className='mx-auto flex justify-center'>
-          <Link href='/blog'>
-            <a className='baseButton'>記事一覧</a>
-          </Link>
         </div>
       </div>
     </section>
