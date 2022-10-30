@@ -6,7 +6,7 @@ import { headerNavLinks } from '@/data/headerNavLinks';
 export const Footer: FC = () => {
   return (
     <footer className='flex flex-col items-center py-8 shadow-inner'>
-      <Image src='/images/logo500x180.png' width={250} height={90} alt='kuchen blog' />
+      <Image src='/images/logo250x90.png' width={250} height={90} alt='kuchen blog' />
       <div className='py-5'>
         {headerNavLinks.map((link) => (
           <Link key={link.href} href={link.href}>

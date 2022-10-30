@@ -10,7 +10,7 @@ export const Hero: FC = () => {
     <section>
       <div className=''>
         <Image
-          src='/images/heroImage.png'
+          src='/images/kuchen-blog-hero.png'
           alt='くーへんブログ'
           width={1280}
           height={700}
