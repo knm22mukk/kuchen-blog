@@ -1,12 +1,28 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
+import { Hero } from '@/components/Hero';
 import { Layout } from '@/components/Layout';
 import { SEO } from '@/components/SEO';
+import { client } from '@/libs/client';
+import { Blog } from '@/types/blog';
 
-const Home: NextPage = () => {
+type Props = {
+  blogs: Blog[];
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const blogData = await client.get({ endpoint: 'blogs', queries: { limit: 4 } });
+  return {
+    props: {
+      blogs: blogData.contents,
+    },
+  };
+};
+
+const Home: NextPage<Props> = ({ blogs }) => {
   return (
     <Layout>
       <SEO />
-      <div className='h-[1000px] p-6 font-bold text-red-500'>ここから始めるくーへんブログ</div>
+      <Hero blogs={blogs} />
     </Layout>
   );
 };
