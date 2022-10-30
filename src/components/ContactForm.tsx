@@ -10,6 +10,7 @@ type Inputs = {
 
 export const ContactForm: FC = () => {
   const [buttonText, setButtonText] = useState<string>('送信する');
+  const [buttonDisable, setButtonDisabe] = useState<boolean>(false);
   const {
     register,
     handleSubmit,
@@ -18,6 +19,7 @@ export const ContactForm: FC = () => {
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     setButtonText('送信中...');
+    setButtonDisabe(true);
     fetch('/api/sendMail', {
       method: 'POST',
       body: JSON.stringify({
@@ -31,6 +33,7 @@ export const ContactForm: FC = () => {
           router.push('/contact/success');
         } else {
           alert(`送信できませんでした。Error: Status Code ${res.status}`);
+          setButtonDisabe(false);
           setButtonText('再送信する');
         }
       })
@@ -44,40 +47,38 @@ export const ContactForm: FC = () => {
   return (
     <form className='container' onSubmit={handleSubmit(onSubmit)}>
       <div className='my-10'>
-        <label htmlFor='name' className='font-light text-gray-500 dark:text-white'>
-          お名前<span className='text-red-500'>*</span>
-        </label>
         <input
+          placeholder='お名前'
           type='text'
           {...register('name', { required: true })}
-          className='w-full rounded border border-gray-300 bg-gray-100 p-2 text-base outline-none focus:border-indigo-500 focus:bg-white dark:bg-gray-600'
+          className='mt-6 w-full border-b-2 bg-gray-50 p-3 font-medium transition duration-300 focus:border-indigo-500 focus:outline-none dark:bg-gray-600'
         />
-        {errors.name && <div className='text-red-500'>入力が必須の項目です</div>}
+        {errors.name && <div className='text-red-500'>*入力が必須の項目です</div>}
       </div>
       <div className='my-10'>
-        <label htmlFor='email' className='font-light text-gray-500 dark:text-white'>
-          メールアドレス<span className='text-red-500'>*</span>
-        </label>
         <input
+          placeholder='メールアドレス'
           type='text'
           {...register('email', { required: true })}
-          className='w-full rounded border border-gray-300 bg-gray-100 p-2 text-base outline-none focus:border-indigo-500 focus:bg-white dark:bg-gray-600'
+          className='mt-6 w-full border-b-2 bg-gray-50 p-3 font-medium transition duration-300 focus:border-indigo-500 focus:outline-none dark:bg-gray-600'
         />
-        {errors.email && <div className='text-red-500'>入力が必須の項目です</div>}
+        {errors.email && <div className='text-red-500'>*入力が必須の項目です</div>}
       </div>
       <div className='my-10'>
-        <label htmlFor='message' className='font-light text-gray-500 dark:text-white'>
-          お問合わせ内容<span className='text-red-500'>*</span>
-        </label>
         <textarea
+          placeholder='お問合せ内容'
           rows={5}
           {...register('message', { required: true })}
-          className='w-full rounded border border-gray-300 bg-gray-100 p-2 text-base outline-none focus:border-indigo-500 focus:bg-white dark:bg-gray-600'
+          className='mt-6 w-full border-b-2 bg-gray-50 p-3 font-medium transition duration-300 focus:border-indigo-500 focus:outline-none dark:bg-gray-600'
         ></textarea>
-        {errors.message && <div className='text-red-500'>入力が必須の項目です</div>}
+        {errors.message && <div className='text-red-500'>*入力が必須の項目です</div>}
       </div>
       <div className='flex justify-center'>
-        <button type='submit' className='baseButton'>
+        <button
+          disabled={buttonDisable}
+          type='submit'
+          className={`baseButton disabled:cursor-not-allowed disabled:opacity-50`}
+        >
           {buttonText}
         </button>
       </div>
