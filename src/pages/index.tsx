@@ -2,6 +2,7 @@ import type { GetStaticProps, NextPage } from 'next';
 import { Hero } from '@/components/Hero';
 import { Layout } from '@/components/Layout';
 import { SEO } from '@/components/SEO';
+import { ToContact } from '@/components/ToContact';
 import { client } from '@/libs/client';
 import { Blog } from '@/types/blog';
 
@@ -23,6 +24,7 @@ const Home: NextPage<Props> = ({ blogs }) => {
     <Layout>
       <SEO />
       <Hero blogs={blogs} />
+      <ToContact />
     </Layout>
   );
 };

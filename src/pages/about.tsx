@@ -4,6 +4,7 @@ import { Breadcrumb } from '@/components/Breadcrumb';
 import { Layout } from '@/components/Layout';
 import { SEO } from '@/components/SEO';
 import { SectionHeader } from '@/components/SectionHeader';
+import { ToContact } from '@/components/ToContact';
 import { profileData } from '@/data/profileData';
 import { siteMetaData } from '@/data/siteMetaData';
 import styles from '@/styles/article.module.css';
@@ -35,6 +36,7 @@ const about: NextPage = () => {
           className={`prose max-w-none dark:prose-invert ${styles.article_style}`}
         />
       </div>
+      <ToContact />
     </Layout>
   );
 };

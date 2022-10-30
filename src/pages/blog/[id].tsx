@@ -3,6 +3,7 @@ import { Article } from '@/components/Article';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { Layout } from '@/components/Layout';
 import { SEO } from '@/components/SEO';
+import { ToContact } from '@/components/ToContact';
 import { siteMetaData } from '@/data/siteMetaData';
 import { client } from '@/libs/client';
 import { Blog } from '@/types/blog';
@@ -38,6 +39,7 @@ const blogId: NextPage<Props> = ({ blog }) => {
       />
       <Breadcrumb lists={[{ title: 'ブログ', path: '/blog' }, { title: blog.title }]} />
       <Article blog={blog} />
+      <ToContact />
     </Layout>
   );
 };
