@@ -31,7 +31,7 @@ export const Hero: FC = () => {
                 <h3 className='mb-3 text-xl font-bold leading-5'>{text.title}</h3>
                 <p className='mb-3 text-sm'>{text.paragragh}</p>
                 <Link href={text.href}>
-                  <a className='textLink inline-flex items-center text-indigo-500'>
+                  <a className='textLink inline-flex items-center text-lg text-indigo-600 dark:text-blue-400'>
                     <AiOutlineArrowRight className='mr-3' />
                     記事を見てみる
                   </a>

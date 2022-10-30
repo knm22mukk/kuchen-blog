@@ -10,7 +10,13 @@ export const Header: FC = () => {
     <header className='flex h-24 items-center justify-around shadow'>
       <Link href='/'>
         <a>
-          <Image src='/images/logo500x180.png' width={250} height={90} alt='kuchen blog' />
+          <Image
+            src='/images/logo250x90.png'
+            width={250}
+            height={90}
+            alt='kuchen blog'
+            className='h-[90px] w-[250px] object-cover'
+          />
         </a>
       </Link>
       <div className='flex items-center justify-center'>

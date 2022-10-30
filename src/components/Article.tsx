@@ -13,7 +13,7 @@ export const Article: FC<Props> = ({ blog }) => {
   return (
     <article className='container'>
       <div className='my-6 inline-block'>
-        <div className='rounded-3xl bg-orange-500 px-4 py-1 text-base font-bold leading-6 text-white'>
+        <div className='rounded-3xl bg-indigo-600 px-4 py-1 text-base font-bold leading-6 text-white'>
           {blog.category.name}
         </div>
       </div>
