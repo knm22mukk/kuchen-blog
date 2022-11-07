@@ -10,7 +10,7 @@ import { siteMetaData } from '@/data/siteMetaData';
 import { client } from '@/libs/client';
 import { Blog } from '@/types/blog';
 
-const PER_PAGE = 3;
+const PER_PAGE = 12;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const blogData = await client.get({ endpoint: 'blogs' });

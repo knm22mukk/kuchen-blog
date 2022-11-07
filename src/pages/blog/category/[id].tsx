@@ -47,7 +47,7 @@ const categoryID: NextPage<Props> = ({ blogs, categoryName }) => {
         pageDescription={`${categoryName}についてくーへんのブログ記事一覧です。`}
         pagePath={`${siteMetaData.siteUrl}/blog/category/${categoryName}`}
       />
-      <Breadcrumb lists={[{ title: 'ブログ', path: '/blog' }, { title: categoryName }]} />
+      <Breadcrumb lists={[{ title: 'ブログ', path: '/blog/page/1' }, { title: categoryName }]} />
       <SectionHeader subHeading='BLOG' title={`${categoryName}の記事一覧`} />
       <BlogGrid blogs={blogs} />
       <ToContact />

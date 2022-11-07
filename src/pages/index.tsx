@@ -31,7 +31,7 @@ const Home: NextPage<Props> = ({ blogs }) => {
         <SectionHeader subHeading='LATEST' title='最新記事' />
         <BlogGrid blogs={blogs} />
         <div className='mx-auto flex justify-center'>
-          <Link href='/blog'>
+          <Link href='/blog/page/1'>
             <a className='baseButton'>記事一覧</a>
           </Link>
         </div>
