@@ -20,7 +20,10 @@ const categories = [
 
 export const Sidebar: FC = () => {
   return (
-    <aside className='flex flex-col p-8'>
+    <aside className='flex flex-col px-8'>
+      <div className='bg-gradient-to-r from-cyan-500 to-indigo-500 p-4 text-2xl font-semibold leading-8 text-white'>
+        プロフィール
+      </div>
       <div className='flex items-center justify-center'>
         <Link href='/about'>
           <a>
@@ -49,7 +52,7 @@ export const Sidebar: FC = () => {
         </p>
       </div>
 
-      <div className='mt-10 bg-indigo-600 p-4 text-2xl font-semibold leading-8 text-white'>
+      <div className='mt-10 bg-gradient-to-r from-cyan-500 to-indigo-500 p-4 text-2xl font-semibold leading-8 text-white'>
         カテゴリー
       </div>
       <div className='flex flex-col'>

@@ -14,7 +14,7 @@ export const Pagination: FC<Props> = ({ currentPageNumber, totalCount, BLOG_PER_
 
   return (
     <div className='container'>
-      <ul className='my-12 flex px-3'>
+      <ul className='my-12 flex justify-center px-3'>
         {range(1, pageCount).map((number, index) => (
           <li key={index}>
             <Link href={`/blog/page/${number}`}>
