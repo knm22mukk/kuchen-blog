@@ -17,7 +17,7 @@ export const featureTexts: { title: string; paragragh: string; href: string }[] 
   },
   {
     title: '記事一覧へ',
-    href: '/blog',
+    href: '/blog/page/1',
     paragragh: '他にもカテゴリー追加したいと思っています。下記からブログ記事一覧をご覧ください。',
   },
 ];
