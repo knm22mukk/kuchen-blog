@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
-import { AiOutlineRight } from 'react-icons/ai';
+import { AiOutlineRight, AiOutlineTwitter } from 'react-icons/ai';
 
 const categories = [
   {
@@ -31,14 +31,21 @@ export const Sidebar: FC = () => {
               src='/images/Klogo500x500.png'
               width={200}
               height={200}
-              className='h-[100px] w-[100px] rounded-full object-cover'
+              className='h-24 w-24 rounded-full object-cover'
               alt='プロフィールアイコン'
             />
           </a>
         </Link>
       </div>
       <div className='flex flex-col items-center justify-center p-4'>
-        <div className='text-xl font-bold leading-7'>くーへん</div>
+        <div className='flex items-center text-xl font-bold'>
+          <span>くーへん</span>
+          <Link href='https://twitter.com/kuchen_22'>
+            <a target='_brank'>
+              <AiOutlineTwitter className='ml-2 text-3xl' />
+            </a>
+          </Link>
+        </div>
       </div>
       <div className='text-base font-normal leading-6'>
         <p>サラリーマン営業/31歳/嫁と娘の3人暮らし</p>
