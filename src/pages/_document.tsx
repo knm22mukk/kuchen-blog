@@ -1,5 +1,6 @@
 import type { DocumentContext, DocumentInitialProps } from 'next/document';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { googleTagManagerId } from '@/libs/gtm';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
@@ -24,6 +25,17 @@ class MyDocument extends Document {
           <meta name='theme-color' content='#2563eb' />
         </Head>
         <body className='bg-gray-50 text-gray-700 dark:bg-gray-800 dark:text-white'>
+          <noscript
+            dangerouslySetInnerHTML={{
+              __html: `
+              <iframe
+                src="https://www.googletagmanager.com/ns.html?id=${googleTagManagerId}"
+                height="0"
+                width="0"
+                style="display:none;visibility:hidden"
+              />`,
+            }}
+          />
           <Main />
           <NextScript />
         </body>
