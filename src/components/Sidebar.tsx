@@ -42,7 +42,7 @@ export const Sidebar: FC = () => {
           <span>くーへん</span>
           <Link href='https://twitter.com/kuchen_22'>
             <a target='_brank'>
-              <AiOutlineTwitter className='ml-2 text-3xl' />
+              <AiOutlineTwitter className='ml-2 text-3xl hover:text-indigo-600' />
             </a>
           </Link>
         </div>
