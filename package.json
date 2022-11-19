@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap --config sitemap.config.js",
     "start": "next start",
     "lint": "next lint --dir src",
     "lint:fix": "yarn lint --fix",
@@ -36,6 +37,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-tailwindcss": "^3.6.2",
+    "next-sitemap": "^3.1.32",
     "postcss": "^8.4.16",
     "prettier": "^2.7.1",
     "tailwindcss": "^3.1.8",
