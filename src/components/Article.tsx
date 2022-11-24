@@ -4,7 +4,6 @@ import { AiOutlineClockCircle } from 'react-icons/ai';
 
 import { Date } from './Date';
 
-import styles from '@/styles/article.module.css';
 import { Blog } from '@/types/blog';
 
 type Props = {
@@ -29,12 +28,25 @@ export const Article: FC<Props> = ({ blog }) => {
       <div className='my-8'>
         <Image width={1280} height={720} src={blog.image.url} alt={blog.title} />
       </div>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${blog.body}`,
-        }}
-        className={`prose max-w-none dark:prose-invert ${styles.article_style}`}
-      />
+      {blog.body.map((body, index) => {
+        return body.fieldId === 'richEditor' ? (
+          <div
+            key={index}
+            dangerouslySetInnerHTML={{
+              __html: `${body.richText}`,
+            }}
+            className='prose max-w-none py-3 dark:prose-invert'
+          />
+        ) : (
+          <div
+            key={index}
+            dangerouslySetInnerHTML={{
+              __html: `${body.htmlText}`,
+            }}
+            className='prose max-w-none py-3 dark:prose-invert'
+          />
+        );
+      })}
     </article>
   );
 };

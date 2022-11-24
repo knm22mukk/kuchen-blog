@@ -1,3 +1,9 @@
+type Body = {
+  fieldId: 'richEditor' | 'html';
+  richText: string;
+  htmlText: string;
+};
+
 export type Blog = {
   id: string;
   title: string;
@@ -5,7 +11,7 @@ export type Blog = {
     url: string;
   };
   description: string;
-  body: string;
+  body: Body[];
   category: Category;
   createdAt: string;
   updatedAt: string;
