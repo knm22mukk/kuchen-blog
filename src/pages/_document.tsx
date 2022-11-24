@@ -1,5 +1,6 @@
 import type { DocumentContext, DocumentInitialProps } from 'next/document';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+
 import { googleTagManagerId } from '@/libs/gtm';
 
 class MyDocument extends Document {

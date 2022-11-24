@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { FC, useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+
 import { headerNavLinks } from '@/data/headerNavLinks';
 
 export const MobileNav: FC = () => {

@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { ContactForm } from '@/components/ContactForm';
 import { Layout } from '@/components/Layout';

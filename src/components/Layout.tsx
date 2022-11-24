@@ -1,4 +1,5 @@
 import { FC, ReactNode } from 'react';
+
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { ReturnToTopButton } from '@/components/ReturnToTopButton';

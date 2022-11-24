@@ -1,5 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
+
 import { BlogGrid } from '@/components/BlogGrid';
 import { Hero } from '@/components/Hero';
 import { Layout } from '@/components/Layout';

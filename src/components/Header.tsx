@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
+
 import { ChangeThemeButton } from '@/components/ChangeThemeButton';
 import { MobileNav } from '@/components/MobileNav';
 import { headerNavLinks } from '@/data/headerNavLinks';

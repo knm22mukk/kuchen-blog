@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import { FC } from 'react';
 import { AiOutlineClockCircle } from 'react-icons/ai';
+
 import { Date } from './Date';
+
 import styles from '@/styles/article.module.css';
 import { Blog } from '@/types/blog';
 

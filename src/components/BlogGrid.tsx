@@ -1,4 +1,5 @@
 import { FC } from 'react';
+
 import { BlogCard } from '@/components/BlogCard';
 import { Blog } from '@/types/blog';
 

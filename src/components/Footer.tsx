@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
+
 import { headerNavLinks } from '@/data/headerNavLinks';
 
 export const Footer: FC = () => {

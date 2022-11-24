@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { FC } from 'react';
+
 import { siteMetaData } from '@/data/siteMetaData';
 
 type Props = {

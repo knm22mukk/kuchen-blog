@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 import { AiOutlineCheck, AiOutlineArrowRight } from 'react-icons/ai';
+
 import { SectionHeader } from '@/components/SectionHeader';
 import { featureTexts } from '@/data/featureTexts';
 
