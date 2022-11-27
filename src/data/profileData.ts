@@ -1,8 +1,4 @@
-import { Blog } from '@/types/blog';
-
-export const profileData: Blog = {
-  id: 'profile',
-  title: 'プロフィール',
+export const profileData = {
   image: {
     url: '/images/Klogo500x500.png',
   },
@@ -26,21 +22,8 @@ export const profileData: Blog = {
   <p>素人の私が書くのは恐れ多いですが、このサイトで使用している技術を簡単に書いてみます</p>
   <p>このグログはJAMスタックの構成で開発しています。フレームワークとしては<a href='https://nextjs.org/'>Next.js</a>を使用しています。言語には<a href='https://www.typescriptlang.org/'>TypeScript</a>で書いています。コンテンツ管理には<a href='https://microcms.io/'>microcms</a>を利用しています。</p>
   <p>それぞれの技術やツールについて完璧に理解できているとは思っていないので日々勉強しながら少しずつ成長して良いサイトにしていきたいと思います。このサイトは全て私が一からコードを書いて作ってきました。何か不具合や改善点があればTwitterのDMかお問合せページからご連絡をいただけますと幸いです。</p>
-  <p></p>
   <h3>ブログの記事はどんなことを書くか</h3>
   <p>ブログの内容としては雑記ブログになります。プログラミングのこと、営業マンとしての仕事のことや効率化のこと、旅行やグルメのこと、たまには商品紹介など、特にジャンルにこだわりを持たずいろんなことを書いていみたいと思います。</p>
   <p>できるだけ分類ごとにみやすくするように工夫したいと思いますので、気になるものがあれば見ていただけると幸いです。コメント機能は今の所つける予定はありませんので、参考になった、面白かったと思ってもらえた記事があればSNSへのシェアをお願いします。</p>
   `,
-  category: {
-    id: 'profile',
-    name: 'プロフィール',
-    createdAt: '2022-10-10',
-    updatedAt: '2022-10-10',
-    publishedAt: '2022-10-10',
-    revisedAt: '2022-10-10',
-  },
-  createdAt: '2022-10-10',
-  updatedAt: '2022-10-10',
-  publishedAt: '2022-10-10',
-  revisedAt: '2022-10-10',
 };

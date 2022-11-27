@@ -6,7 +6,6 @@ import { SEO } from '@/components/SEO';
 import { SectionHeader } from '@/components/SectionHeader';
 import { PrivacyPolicy } from '@/data/PrivacyPolicy';
 import { siteMetaData } from '@/data/siteMetaData';
-import styles from '@/styles/article.module.css';
 
 const privacypolicy: NextPage = () => {
   return (
@@ -23,7 +22,7 @@ const privacypolicy: NextPage = () => {
           dangerouslySetInnerHTML={{
             __html: `${PrivacyPolicy.body}`,
           }}
-          className={`prose max-w-none dark:prose-invert ${styles.article_style}`}
+          className='prose max-w-none py-3 dark:prose-invert'
         />
       </div>
     </Layout>

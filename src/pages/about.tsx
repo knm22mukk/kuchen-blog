@@ -8,7 +8,6 @@ import { SectionHeader } from '@/components/SectionHeader';
 import { ToContact } from '@/components/ToContact';
 import { profileData } from '@/data/profileData';
 import { siteMetaData } from '@/data/siteMetaData';
-import styles from '@/styles/article.module.css';
 
 const about: NextPage = () => {
   return (
@@ -34,7 +33,7 @@ const about: NextPage = () => {
           dangerouslySetInnerHTML={{
             __html: `${profileData.body}`,
           }}
-          className={`prose max-w-none dark:prose-invert ${styles.article_style}`}
+          className='prose max-w-none py-3 dark:prose-invert'
         />
       </div>
       <ToContact />
