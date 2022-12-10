@@ -20,7 +20,7 @@ const categories = [
 
 export const Sidebar: FC = () => {
   return (
-    <aside className='flex flex-col px-8'>
+    <aside className='flex flex-col px-4'>
       <div className='bg-gradient-to-r from-cyan-500 to-indigo-500 p-4 text-2xl font-semibold leading-8 text-white'>
         プロフィール
       </div>

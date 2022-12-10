@@ -9,7 +9,7 @@ import { featureTexts } from '@/data/featureTexts';
 export const Hero: FC = () => {
   return (
     <section>
-      <div className=''>
+      <div className='px-4'>
         <Image
           src='/images/kuchen-blog-hero.png'
           alt='くーへんブログ'
