@@ -4,7 +4,7 @@ import { AiOutlineMessage, AiOutlineTwitter } from 'react-icons/ai';
 
 export const ToContact: FC = () => {
   return (
-    <div className='container my-8 rounded-lg bg-indigo-600 py-6 text-white'>
+    <div className='container m-4 rounded-lg bg-indigo-600 py-6 text-white'>
       <div className='container py-4'>
         <div className='flex flex-col items-center'>
           <p className='mb-2 font-bold text-white'>CONTACT ME</p>

@@ -40,11 +40,14 @@ export const Sidebar: FC = () => {
       <div className='flex flex-col items-center justify-center p-4'>
         <div className='flex items-center text-xl font-bold'>
           <span>くーへん</span>
-          <Link href='https://twitter.com/kuchen_22'>
-            <a target='_brank'>
-              <AiOutlineTwitter className='ml-2 text-3xl hover:text-indigo-600' />
-            </a>
-          </Link>
+          <a
+            href='https://twitter.com/kuchen_22'
+            target='_brank'
+            rel='noopener noreferrer'
+            aria-label='twitterへのリンク'
+          >
+            <AiOutlineTwitter className='ml-2 text-3xl hover:text-indigo-600' />
+          </a>
         </div>
       </div>
       <div className='text-base font-normal leading-6'>
