@@ -12,7 +12,9 @@
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'"
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
     "date-fns": "^2.29.3",
+    "highlight.js": "^11.7.0",
     "microcms-js-sdk": "^2.2.1",
     "next": "12.3.1",
     "next-pwa": "^5.6.0",
@@ -25,6 +27,8 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.7",
+    "@types/cheerio": "^0.22.31",
+    "@types/highlightjs": "^9.12.2",
     "@types/node": "18.7.18",
     "@types/nodemailer": "^6.4.6",
     "@types/react": "18.0.20",
