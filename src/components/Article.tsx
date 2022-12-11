@@ -8,9 +8,10 @@ import { Blog } from '@/types/blog';
 
 type Props = {
   blog: Blog;
+  highlightBody: string;
 };
 
-export const Article: FC<Props> = ({ blog }) => {
+export const Article: FC<Props> = ({ blog, highlightBody }) => {
   return (
     <article className='container'>
       <div className='my-6 inline-block'>
@@ -28,25 +29,12 @@ export const Article: FC<Props> = ({ blog }) => {
       <div className='my-8'>
         <Image width={1280} height={720} src={blog.image.url} alt={blog.title} />
       </div>
-      {blog.body.map((body, index) => {
-        return body.fieldId === 'richEditor' ? (
-          <div
-            key={index}
-            dangerouslySetInnerHTML={{
-              __html: `${body.richText}`,
-            }}
-            className='prose max-w-none py-3 dark:prose-invert'
-          />
-        ) : (
-          <div
-            key={index}
-            dangerouslySetInnerHTML={{
-              __html: `${body.htmlText}`,
-            }}
-            className='prose max-w-none py-3 dark:prose-invert'
-          />
-        );
-      })}
+      <div
+        dangerouslySetInnerHTML={{
+          __html: `${highlightBody}`,
+        }}
+        className='prose max-w-none py-3 dark:prose-invert'
+      />
     </article>
   );
 };
