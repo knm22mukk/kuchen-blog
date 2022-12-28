@@ -7,6 +7,7 @@ import { Article } from '@/components/Article';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { Layout } from '@/components/Layout';
 import { SEO } from '@/components/SEO';
+import { ShareButton } from '@/components/ShareButton';
 import { ToContact } from '@/components/ToContact';
 import { siteMetaData } from '@/data/siteMetaData';
 import { client } from '@/libs/client';
@@ -51,12 +52,14 @@ const blogId: NextPage<Props> = ({ blog, highlightBody }) => {
   return (
     <Layout>
       <SEO
-        pageTitle='ブログ一覧ページ | くーへんブログ'
-        pageDescription='サラリーマンくーへんが仕事のこと、日常のことを気ままに発信していきます。'
-        pagePath={`${siteMetaData.siteUrl}/about`}
+        pageTitle={`${blog.title} | くーへんブログ`}
+        pageDescription={blog.description}
+        pagePath={`${siteMetaData.siteUrl}/blog/${blog.id}`}
+        pageImage={blog.image.url}
       />
       <Breadcrumb lists={[{ title: 'ブログ', path: '/blog/page/1' }, { title: blog.title }]} />
       <Article blog={blog} highlightBody={highlightBody} />
+      <ShareButton blog={blog} />
       <ToContact />
     </Layout>
   );
